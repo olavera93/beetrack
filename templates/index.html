@@ -1,0 +1,168 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Subir y Modificar Archivo Excel</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    </head>
+    <body>
+        <div class="container">
+            <div class="encabezado">
+                <img class="logo" src="../static/Image/logo.png" alt="Logo principal">
+            </div>
+            <form action="/" method="post" enctype="multipart/form-data" class="formulario" onsubmit="return clearForm()">
+                <label for="file" class="input-top">Selecciona el archivo Excel:</label>
+                <input type="file" id="file" name="file" accept=".xlsx" required>
+
+                <label for="placa">Ingresa la placa del vehículo:</label>
+                <input type="text" id="placa" name="placa" required>
+
+                <label for="output_name">Nombre del archivo modificado:</label>
+                <input type="text" id="output_name" name="output_name" required>
+
+                <label for="last_route" class="line1">Es la última ruta:</label>
+                <input class="custom-checkbox" type="checkbox" id="last_route" name="last_route">
+                
+                <label for="route_choice" class="line2">Seleccione la sede:</label>
+                <select id="route_choice" name="route_choice">
+                    <option value="principal">Principal</option>
+                    <option value="teusaquillo">Teusaquillo</option>
+                </select>
+
+
+                <div class="boton-container">
+                    <input type="submit" value="Subir y Modificar">
+                </div>
+            </form>
+
+            <table class="tabla">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Vehículo</th>
+                        <th>Nombre</th>
+                        <th>Vehículo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Alejandro Gonzalez</td>
+                        <td>EHP74F</td>
+                        <td>Jair Perez</td>
+                        <td>IOS73D</td>
+                    </tr>
+                    <tr>
+                        <td>Andres Marquez</td>
+                        <td>HID20F</td>
+                        <td>Arturo Escandon</td>
+                        <td>AQG02G</td>
+                    </tr>
+                    <tr>
+                        <td>Brayan Tocarruncho</td>
+                        <td>CUX61G</td>
+                        <td>Carlos Almario</td>
+                        <td>ESB55E</td>
+                    </tr>
+                    <tr>
+                        <td>Daniel Yara</td>
+                        <td>LTZ36E</td>
+                        <td>Yordy Alfaro</td>
+                        <td>VMQ92F</td>
+                    </tr>
+                    <tr>
+                        <td>Esneyder Fernandez</td>
+                        <td>AAA26H</td>
+                        <td>Francisco Navas</td>
+                        <td>QMP51F</td>
+                    </tr>
+                    <tr>
+                        <td>Franklinn Ortiz</td>
+                        <td>VAS19D</td>
+                        <td>Geinson Alvarez</td>
+                        <td>ZCO85G</td>
+                    </tr>
+                    <tr>
+                        <td>German Herrera</td>
+                        <td>QSD96G</td>
+                        <td>Guillermo Maecha</td>
+                        <td>XGU76G</td>
+                    </tr>
+                    <tr>
+                        <td>Jairo Contreras</td>
+                        <td>FYO88E</td>
+                        <td>Jaime Porras</td>
+                        <td>VUH99C</td>
+                    </tr>
+                    <tr>
+                        <td>Javier Prieto</td>
+                        <td>HUA90E</td>
+                        <td>John Gonzalez</td>
+                        <td>OUP14C</td>
+                    </tr>
+                    <tr>
+                        <td>Jose Calderon</td>
+                        <td>FYA04H</td>
+                        <td>Jonathan Peña</td>
+                        <td>MOS13F</td>
+                    </tr>
+                    <tr>
+                        <td>Leonardo Valencia</td>
+                        <td>RPE98G</td>
+                        <td>Julio Escandon</td>
+                        <td>WED86E</td>
+                    </tr>
+                    <tr>
+                        <td>Julio Paredes</td>
+                        <td>PEF97F</td>
+                        <td>Maicon Noe</td>
+                        <td>BC0002</td>
+                    </tr>
+                    <tr>
+                        <td>Michael Perez</td>
+                        <td>QJR46F</td>
+                        <td>Mauricio Prieto</td>
+                        <td>EOK63G</td>
+                    </tr>
+                    <tr>
+                        <td>Nelson Panqueba</td>
+                        <td>JMA04G</td>
+                        <td>Orlando Ballesteros</td>
+                        <td>URP02F</td>
+                    </tr>
+                    <tr>
+                        <td>Yimy Cardenas</td>
+                        <td>DCA66H</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+ <tr>
+                        <td>Juan Lopez</td>
+                        <td>JXI73D</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+        </div>
+
+<script>
+            function clearf() {
+                document.getElementById("file").value = "";
+                document.getElementById("placa").value = "";
+                document.getElementById("output_name").value = "";
+                document.getElementById("last_route").checked = false;
+                document.getElementById("route_choice").selectedIndex = 0;
+                return true;
+            }
+            function clearForm() {
+                setTimeout(
+                    clearf, 2000
+                )
+                
+            }
+        </script>
+    </body>
+    </html>
