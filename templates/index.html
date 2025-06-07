@@ -133,14 +133,8 @@
                     <tr>
                         <td>Yimy Cardenas</td>
                         <td>DCA66H</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
- <tr>
                         <td>Juan Lopez</td>
                         <td>JXI73D</td>
-                        <td></td>
-                        <td></td>
                     </tr>
                 </tbody>
             </table>
@@ -163,6 +157,44 @@
                 )
                 
             }
+
+document.querySelector(".tabla tbody").addEventListener("click", function(event) {
+    // Verifica que el clic ocurrió en una celda de nombre
+    if (event.target.tagName === "TD" && event.target.cellIndex % 2 === 0) {
+        // Remueve la clase activa de cualquier otra celda previamente seleccionada
+        document.querySelectorAll(".active").forEach(el => el.classList.remove("active"));
+        // Añade la clase activa a la celda seleccionada
+        event.target.classList.add("active");
+
+        // Obtiene la placa del vehículo
+        let placa = event.target.nextElementSibling.textContent;
+        document.getElementById("placa").value = placa;
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    const tabla = document.querySelector(".tabla tbody");
+    const outputNameField = document.getElementById("output_name");
+
+    tabla.addEventListener("click", function(event) {
+        if (event.target.tagName === "TD" && event.target.cellIndex % 2 === 0) {
+            document.querySelectorAll(".active").forEach(el => el.classList.remove("active"));
+            event.target.classList.add("active");
+
+            let messengerName = event.target.textContent.trim().replace(/\s+/g, "_");
+            let now = new Date();
+            let formattedDate = now.getFullYear() +
+                String(now.getMonth() + 1).padStart(2, "0") +
+                String(now.getDate()).padStart(2, "0") +
+                "_" +
+                String(now.getHours()).padStart(2, "0") +
+                String(now.getMinutes()).padStart(2, "0");
+
+            outputNameField.value = `${messengerName}_${formattedDate}`;
+        }
+    });
+});
+
         </script>
     </body>
     </html>

@@ -44,9 +44,7 @@
     gap: 20px;
     grid-auto-rows: minmax(100px, auto);
     background-color: var(--background-color); /* Light gray background */
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 40px 100px;
   }
   
   .encabezado {
@@ -164,3 +162,8 @@
     background-color: var(--highlight-color);
     border-color: var(--highlight-color);
   }
+
+  .active {
+    background-color: #ffd700; /* Amarillo dorado */
+    font-weight: bold;
+}
